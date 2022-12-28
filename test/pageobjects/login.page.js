@@ -23,6 +23,10 @@ class LoginPage extends Page {
     return $('[data-test="error"]');
   }
 
+  get loginCredentials() {
+    return $("#login_credentials");
+  }
+
   /**
    * a method to encapsule automation code to interact with the page
    * e.g. to login using username and password
