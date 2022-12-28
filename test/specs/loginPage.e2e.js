@@ -15,4 +15,16 @@ describe("Login tests", () => {
     await LoginPage.doLogin("invalid_user", "invalid_password");
     await expect(loginPage.errorLogin).toBeExisting();
   });
+
+  it("should check items text", async () => {
+    const backpackName = inventoryPage.backpackItemName;
+    const backpackDescription = inventoryPage.backpackItemDescription;
+
+    await LoginPage.open();
+    await LoginPage.doLogin("invalid_user", "invalid_password");
+    await expect(backpackName.innerHTML()).toContain("Sauce Labs Backpack");
+    await expect(backpackDescription.innerHTML()).toContain(
+      "carry.allTheThings()"
+    );
+  });
 });
