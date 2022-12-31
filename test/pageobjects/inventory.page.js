@@ -18,6 +18,18 @@ class InventoryPage extends Page {
   get backpackItemDescription() {
     return $('a[id="item_4_title_link"]~[class="inventory_item_desc"]');
   }
+
+  get backpackAddToCartBtn() {
+    return $("#add-to-cart-sauce-labs-backpack");
+  }
+
+  async clickBackpackAddToCartBtn() {
+    await this.backpackAddToCartBtn.click();
+  }
+
+  get backpackRemoveCartBtn() {
+    return $("#remove-sauce-labs-backpack");
+  }
 }
 
 module.exports = new InventoryPage();
