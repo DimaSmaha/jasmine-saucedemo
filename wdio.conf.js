@@ -308,4 +308,7 @@ exports.config = {
    */
   // onReload: function(oldSessionId, newSessionId) {
   // }
+  mochaOpts: {
+    retries: 3,
+  },
 };
