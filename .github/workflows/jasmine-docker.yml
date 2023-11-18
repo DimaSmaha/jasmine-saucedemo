@@ -15,5 +15,5 @@ jobs:
         node-version: 20
     - name: Build Docker image
       run: docker build . -t jasmine-tests
-    - name: Run Playwright tests on Docker
+    - name: Run Jasmine tests on Docker
       run: docker run jasmine-tests
