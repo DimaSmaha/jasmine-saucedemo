@@ -1,3 +1,4 @@
+require('dotenv').config()
 const LoginPage = require("../pageobjects/login.page");
 const inventoryPage = require("../pageobjects/inventory.page");
 const loginPage = require("../pageobjects/login.page");
@@ -6,7 +7,7 @@ describe("Login tests", () => {
   it("should login with valid credentials |", async () => {
     await LoginPage.open();
     await expect(loginPage.loginCredentials).toHaveClass("login_credentials");
-    await LoginPage.doLogin("standard_user", "secret_sauce");
+    await LoginPage.doLogin(process.env.SAUCELABS_USERNAME, process.env.SAUCELABS_PASSWORD);
     await expect(inventoryPage.backpackItemLink).toBeExisting();
   });
 
@@ -21,7 +22,7 @@ describe("Login tests", () => {
     const backpackDescription = inventoryPage.backpackItemDescription;
 
     await LoginPage.open();
-    await LoginPage.doLogin("standard_user", "secret_sauce");
+    await LoginPage.doLogin(process.env.SAUCELABS_USERNAME, process.env.SAUCELABS_PASSWORD);
     await backpackName.waitForDisplayed();
     await expect(backpackName).toHaveTextContaining("Sauce Labs Backpack");
     await backpackDescription.waitForDisplayed();

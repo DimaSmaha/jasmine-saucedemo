@@ -1,10 +1,11 @@
+require('dotenv').config()
 const inventoryPage = require("../pageobjects/inventory.page");
 const loginPage = require("../pageobjects/login.page");
 
 describe("Inventory tests |", () => {
   beforeEach(async () => {
     await loginPage.open();
-    await loginPage.doLogin("standard_user", "secret_sauce");
+    await loginPage.doLogin(process.env.SAUCELABS_USERNAME, process.env.SAUCELABS_PASSWORD);
   });
 
   it("should add item to the cart", async () => {
