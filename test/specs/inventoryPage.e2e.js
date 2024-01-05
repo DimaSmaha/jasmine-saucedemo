@@ -19,7 +19,8 @@ describe("Inventory tests |", () => {
     await expect(inventoryPage.backpackRemoveCartBtn).toBeExisting();
   });
 
-  xit("should click item to the cart", async () => {
+  it("should click item to the cart", async () => {
+    await inventoryPage.backpackRemoveCartBtn.click()
     await expect(inventoryPage.backpackAddToCartBtn).toBeExisting();
     await inventoryPage.clickBackpackAddToCartBtn();
   });

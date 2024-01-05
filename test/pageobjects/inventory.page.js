@@ -12,7 +12,7 @@ class InventoryPage extends Page {
   }
 
   get backpackItemName() {
-    return $('a[id="item_4_title_link"] [class="inventory_item_name"]');
+    return $('a[id="item_4_title_link"]>[class="inventory_item_name "]');
   }
 
   get backpackItemDescription() {
