@@ -20,4 +20,4 @@ RUN npm install
 
 COPY . .
 
-CMD ["npm", "run", "jasmine"]
+CMD ["npm", "run", "wdio"]
