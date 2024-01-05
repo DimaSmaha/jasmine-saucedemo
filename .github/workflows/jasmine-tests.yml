@@ -22,3 +22,11 @@ jobs:
 
       - name: Run Jasmine tests
         run: npm run wdio
+
+      - name: Build test report
+        uses: simple-elf/allure-report-action@v1.7
+        if: always()
+        with:
+          gh_pages: gh-pages
+          allure_history: allure-history
+          allure_results: build/allure-results
