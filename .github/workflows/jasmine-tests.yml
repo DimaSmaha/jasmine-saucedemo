@@ -1,0 +1,25 @@
+name: Jasmine Tests
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+jobs:
+  test:
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+
+    env:
+      SAUCELABS_USERNAME: ${{ vars.SAUCELABS_USERNAME }}
+      SAUCELABS_PASSWORD: ${{ vars.SAUCELABS_PASSWORD }}
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Jasmine tests
+        run: npm run wdio
