@@ -3,7 +3,7 @@ const inventoryPage = require("../pageobjects/inventory.page");
 const loginPage = require("../pageobjects/login.page");
 
 describe("Login tests", () => {
-  it("should login with valid credentials", async () => {
+  it("should login with valid credentials |", async () => {
     await LoginPage.open();
     await expect(loginPage.loginCredentials).toHaveClass("login_credentials");
     await LoginPage.doLogin("standard_user", "secret_sauce");

@@ -1,7 +1,7 @@
 const inventoryPage = require("../pageobjects/inventory.page");
 const loginPage = require("../pageobjects/login.page");
 
-describe("Inventory tests", () => {
+describe("Inventory tests |", () => {
   beforeEach(async () => {
     await loginPage.open();
     await loginPage.doLogin("standard_user", "secret_sauce");
