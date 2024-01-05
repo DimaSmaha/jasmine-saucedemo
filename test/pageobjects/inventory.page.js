@@ -1,7 +1,7 @@
 const Page = require("./page");
 
 /**
- * sub page containing specific selectors and methods for a specific page
+ * sub page containing specific selectors and methods for a specific page and page selectors
  */
 class InventoryPage extends Page {
   /**
