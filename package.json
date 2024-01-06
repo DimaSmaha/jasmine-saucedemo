@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "@wdio/browserstack-service": "^8.27.1",
     "@wdio/cli": "^8.0.15",
     "@wdio/jasmine-framework": "^8.0.14",
     "@wdio/local-runner": "^8.0.15",
@@ -9,6 +10,7 @@
   },
   "scripts": {
     "wdio": "wdio run wdio.conf.js",
+    "wdio-bs": "wdio run wdio.conf.bs.js",
     "allure:generate:and:open:report": "npx allure generate allure-results --clean && npx allure open ./allure-report"
   },
   "dependencies": {
