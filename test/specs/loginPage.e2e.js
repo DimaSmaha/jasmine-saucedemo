@@ -26,11 +26,12 @@ describe("Login tests |", () => {
 
     await LoginPage.open();
     await browser.setWindowSize(1440, 735);
+    expect(await loginPage.loginCredentials).toHaveClass("login_credentials");
     await LoginPage.doLogin(process.env.SAUCELABS_USERNAME, process.env.SAUCELABS_PASSWORD);
     await backpackName.waitForDisplayed();
-    await expect(backpackName).toHaveTextContaining("Sauce Labs Backpack");
+    await expect(await backpackName).toHaveTextContaining("Sauce Labs Backpack");
     await backpackDescription.waitForDisplayed();
-    await expect(backpackDescription).toHaveTextContaining(
+    await expect(await backpackDescription).toHaveTextContaining(
       "carry.allTheThings()"
     );
   });
