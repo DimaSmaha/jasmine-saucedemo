@@ -2,12 +2,19 @@ exports.config = {
   user: process.env.BROWSERSTACK_USERNAME || "BROWSERSTACK_USERNAME",
   key: process.env.BROWSERSTACK_ACCESS_KEY || "BROWSERSTACK_ACCESS_KEY",
   hostname: 'hub.browserstack.com',
+  services:[
+    [
+      'browserstack',
+      { browserstackLocal: true, opts: { forcelocal: false } },
+    ],
+  ],
+
   //
   // ====================
   // Runner Configuration
   // ====================
   // WebdriverIO supports running e2e tests as well as unit and component tests.
-  runner: "local",
+  // runner: "local",
 
   //
   // ==================
@@ -151,12 +158,6 @@ exports.config = {
   // Services take over a specific job you don't want to take care of. They enhance
   // your test setup with almost no effort. Unlike plugins, they don't add new
   // commands. Instead, they hook themselves up into the test process.
-  services:[
-    [
-      'browserstack',
-      { browserstackLocal: true, opts: { forcelocal: false } },
-    ],
-  ],
 
   // Framework you want to run your specs with.
   // The following are supported: Mocha, Jasmine, and Cucumber
