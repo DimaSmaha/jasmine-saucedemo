@@ -6,6 +6,7 @@ const loginPage = require("../pageobjects/login.page");
 describe("Login tests", () => {
   it("should login with valid credentials |", async () => {
     await LoginPage.open();
+    await browser.setWindowSize(1440, 735);
     await expect(loginPage.loginCredentials).toHaveClass("login_credentials");
     await LoginPage.doLogin(process.env.SAUCELABS_USERNAME, process.env.SAUCELABS_PASSWORD);
     await expect(inventoryPage.backpackItemLink).toBeExisting();
@@ -13,6 +14,7 @@ describe("Login tests", () => {
 
   it("should show an error whe use login with invalid credentials", async () => {
     await LoginPage.open();
+    await browser.setWindowSize(1440, 735);
     await LoginPage.doLogin("invalid_user", "invalid_password");
     await expect(loginPage.errorLogin).toBeExisting();
   });
@@ -22,6 +24,7 @@ describe("Login tests", () => {
     const backpackDescription = inventoryPage.backpackItemDescription;
 
     await LoginPage.open();
+    await browser.setWindowSize(1440, 735);
     await LoginPage.doLogin(process.env.SAUCELABS_USERNAME, process.env.SAUCELABS_PASSWORD);
     await backpackName.waitForDisplayed();
     await expect(backpackName).toHaveTextContaining("Sauce Labs Backpack");

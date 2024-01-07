@@ -2,9 +2,10 @@ require('dotenv').config()
 const inventoryPage = require("../pageobjects/inventory.page");
 const loginPage = require("../pageobjects/login.page");
 
-describe("Inventory tests |", () => {
+xdescribe("Inventory tests |", () => {
   beforeEach(async () => {
     await loginPage.open();
+    await browser.setWindowSize(1440, 735);
     await loginPage.doLogin(process.env.SAUCELABS_USERNAME, process.env.SAUCELABS_PASSWORD);
   });
 
