@@ -2,7 +2,7 @@ require('dotenv').config()
 const inventoryPage = require("../pageobjects/inventory.page");
 const loginPage = require("../pageobjects/login.page");
 
-xdescribe("Inventory tests |", () => {
+describe("Inventory tests |", () => {
   beforeEach(async () => {
     await loginPage.open();
     await browser.setWindowSize(1440, 735);
