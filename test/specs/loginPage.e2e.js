@@ -3,12 +3,13 @@ const LoginPage = require("../pageobjects/login.page");
 const inventoryPage = require("../pageobjects/inventory.page");
 const loginPage = require("../pageobjects/login.page");
 
-describe("Login tests", () => {
-  it("should login with valid credentials |", async () => {
+describe("Login tests |", () => {
+  it("should login with valid credentials", async () => {
     await LoginPage.open();
     await browser.setWindowSize(1440, 735);
-    await expect(loginPage.loginCredentials).toHaveClass("login_credentials");
+    expect(await loginPage.loginCredentials).toHaveClass("login_credentials");
     await LoginPage.doLogin(process.env.SAUCELABS_USERNAME, process.env.SAUCELABS_PASSWORD);
+    await inventoryPage.backpackItemLink.waitForDisplayed();
     await expect(inventoryPage.backpackItemLink).toBeExisting();
   });
 
