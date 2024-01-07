@@ -10,6 +10,7 @@
   },
   "scripts": {
     "wdio": "wdio run wdio.conf.js",
+    "wdio-headed": "wdio run wdio.conf.headed.js",
     "wdio-bs": "wdio run wdio.conf.bs.js",
     "allure:generate:and:open:report": "npx allure generate allure-results --clean && npx allure open ./allure-report"
   },
