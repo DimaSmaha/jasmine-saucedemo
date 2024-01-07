@@ -69,14 +69,17 @@ exports.config = {
       browserName: "chrome",
       platformName: "Windows 10",
       browserVersion: "latest",
+      "sauce:options": {
+        screenResolution: "1920x1080",
+      },
     },
     {
       browserName: "firefox",
       platformName: "Windows 10",
       browserVersion: "latest",
-      // 'sauce:options': {
-      //     screenResolution: '1600x1200'
-      // },
+      "sauce:options": {
+        screenResolution: "1920x1080",
+      },
     },
   ],
   //
